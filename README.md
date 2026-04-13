@@ -204,6 +204,7 @@ If you build tools, extensions, or workflows on top of this project, please let 
 
 - [ComfyUI-See-through](https://github.com/jtydhr88/ComfyUI-See-through) by [@jtydhr88](https://github.com/jtydhr88) — Integration for ComfyUI, with node-based workflow and in-browser PSD export. Thank you for the amazing work!
 - [PachiPakuGen](https://github.com/kazuya-bros/PachiPakuGen) by [@kazuya-bros](https://github.com/kazuya-bros) — Desktop tool that takes See-Through's decomposed PSD output and generates animation materials (eye blinks, lip-sync mouth shapes) for [SpriTalk](https://kazuyabros.booth.pm/items/8102679), a talking-character animation tool. Visit their [Booth](https://kazuyabros.booth.pm/items/8102679) for the tool and demo videos!
+- [StretchyStudio](https://github.com/MangoLion/stretchystudio) — Free, in-browser 2D puppet animation tool that auto-rigs See-through's decomposed PSD layers, closing the gap between decomposition and a fully animatable character. Drop our PSD output directly into it and it just works. Check out their [Reddit thread](https://www.reddit.com/r/StableDiffusion/comments/1sjj7ta/free_opensource_tool_to_instantly_rig_and_animate/) and [live editor](https://editor.stretchy.studio).
 
 We also seek i18n help for this project. Your help will be highly appreciated.
 
