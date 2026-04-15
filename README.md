@@ -4,6 +4,7 @@ See-through: Single-image Layer Decomposition for Anime Characters
 
 <a href='https://arxiv.org/abs/2602.03749'><img src='https://img.shields.io/badge/arXiv-2602.03749-b31b1b.svg'></a>
 <a href='https://huggingface.co/spaces/24yearsold/see-through-demo'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Space-PSD%20Inference%20Demo-blue'></a>
+<a href='https://modelscope.cn/studios/ljsabc/See-Through'><img src='https://img.shields.io/badge/ModelScope-Demo%2F在线演示-624aff.svg'></a>
 
 
 _**[Jian Lin](https://github.com/dmMaze)<sup>1</sup>, [Chengze Li](https://moeka.me)<sup>1*</sup>, [Haoyun Qin](https://haoyunqin.com/)<sup>2,3,4</sup>, Kwun Wang Chan<sup>1</sup>, [Yanghua Jin](https://github.com/Aixile)<sup>3</sup>, [Hanyuan Liu](https://github.com/hyliu)<sup>1</sup>, Stephen Chun Wang Choy<sup>1</sup>, Xueting Liu<sup>1</sup>**_
@@ -17,6 +18,10 @@ Conditionally accepted to appear in *ACM SIGGRAPH 2026 Conference Proceedings*.
 </div>
 
 ---
+
+> **Notice:** This is an open-source research project. We have not set up any paid service for this tool. If you encounter a website charging for this functionality, it is not from us. Use at your own risk.
+>
+> **声明：** 本项目为开源研究项目，我们未开设任何付费服务。如遇到以此功能收费的网站，均与我们无关，请注意甄别。
 
 ## TL;DR
 
@@ -91,9 +96,13 @@ ln -sf common/assets assets
 
 > For the definition of complete body tags, refer to [scrap_model.py](./common/live2d/scrap_model.py).
 
-### Huggingface Space
+### Online Demo
 
 We have prepared [a Huggingface Space](https://huggingface.co/spaces/24yearsold/see-through-demo) with ZeroGPU, so that if you register with HuggingFace, you should be able to run 1-2 PSD extractions per day (approximately 2-3 mins each, at 1280 resolution).
+
+For users in Mainland China, we also provide a [ModelScope demo](https://modelscope.cn/studios/ljsabc/See-Through). It's completely free now, and supports slightly higher resolution than the HuggingFace demo. We will continue to maintain both demos to ensure accessibility for users worldwide.
+
+中国大陆用户可以使用[魔搭社区 ModelScope 在线演示](https://modelscope.cn/studios/ljsabc/See-Through)，目前完全免费，并且可以使用更高一点的分辨率。
 
 <img alt="image" src="https://github.com/user-attachments/assets/3f98f47b-e98b-4628-9859-8772cda69f93" />
 
